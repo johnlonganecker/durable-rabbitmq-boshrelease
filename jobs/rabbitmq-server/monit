@@ -1,0 +1,5 @@
+check process rabbitmq-server
+  with pidfile /var/vcap/sys/run/rabbitmq-server/rabbitmq-server.pid
+  start program "/var/vcap/jobs/rabbitmq-server/bin/monit_debugger rabbitmq-server_ctl '/var/vcap/jobs/rabbitmq-server/bin/ctl start'"
+  stop program "/var/vcap/jobs/rabbitmq-server/bin/monit_debugger rabbitmq-server_ctl '/var/vcap/jobs/rabbitmq-server/bin/ctl stop'"
+  group vcap
